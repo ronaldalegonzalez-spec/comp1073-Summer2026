@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #87ceeb;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* main box ==================*/
+.story-maker-container {
+    background-color: #fff8b0;
+    width: 90%;
+    max-width: 700px;
+
+    padding: 30px;
+    border-radius: 25px;
+    border: 6px solid #ff7b00;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    margin-top: 140px;
+}
+
+
+.page-title {
+    color: #f22d96;
+    background-color: #ffca3a;
+    font-family: "Butterfly Kids", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    
+    text-align: center;
+    margin-left: 80px;
+    margin-top: -355px;
+    position: absolute;
+    font-size: 50px;
+    padding: 70px 80px;
+    border: 6px solid #ff5100;
+}
+
+.page-title:hover{
+    transform: scale(1.03);
+}
+
+
+.instructions {
+    color: #444;
+    margin-bottom: 25px;
+    font-size:larger
+}
+
+
+/* Word buttons =================*/
+.word-selectors {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+
+.story-button {
+    min-height: 90px;
+    background-color: #ffca3a;
+    border: 3px solid #333;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+
+.story-button:hover {
+    transform: scale(1.05);
+    background-color: #ffd60a;
+}
+
+
+/* Controls =================*/
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+
+.control-button {
+    background-color: #06d6a0;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.control-button:hover {
+    background-color: #00b383;
+}
+
+
+/* Result ===================*/
+.story-output-container {
+    background-color: white;
+    border: 3px dashed #ff006e;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 100px;
+}
+
+
+#story-output {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
