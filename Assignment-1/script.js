@@ -57,7 +57,11 @@ reset.addEventListener('click', resetAll);
 
 //Story created++++++++++
 function showStory() {
-    //write condition if none buttons were selected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
+    if (subjectIndex === -1 || actionIndex === -1 || descriptionIndex === -1 || objectIndex === -1 || locationIndex === -1) {
+        storyBar.textContent = "Please select all the parts of the story first!";
+        return;
+    }
     storyBar.textContent = `${subjects[subjectIndex]} ${actions[actionIndex]} ${descriptions[descriptionIndex]} ${objects[objectIndex]} ${locations[locationIndex]}.`;
 }
 
