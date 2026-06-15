@@ -13,6 +13,9 @@ const reset = document.querySelector('#reset-btn');
 
 // Another Factors====================>>>>>>
 const storyBar = document.querySelector('#story-output');//<-----Important<<
+const defaultStoryText = storyBar.textContent; //--Save the default text
+const defaultBtnText = [subjectBtn.textContent, actionBtn.textContent, descriptionBtn.textContent, objectBtn.textContent, locationBtn.textContent];//--Save default btn text
+
 
 // Arrays ********************************^
 let subjects = ["My Mom", "My Dad", "The Dog", "My Teacher"];
@@ -21,6 +24,9 @@ let descriptions = ["a funny", "a scary", "a goofy", "a slimy"];
 let objects = ["goat", "monkey", "cow", "frog"];
 let locations = ["on the moon", "in my spaghetti", "in my soup", "on the grass"];
 
+let lists = [subjects, actions, descriptions, objects, locations];
+let buttonsList = [subjectBtn, actionBtn, descriptionBtn, objectBtn, locationBtn];
+
 // Index variables>>>>
 let subjectIndex = -1;
 let actionIndex = -1;
@@ -28,6 +34,7 @@ let descriptionIndex = -1;
 let objectIndex = -1;
 let locationIndex = -1;
 
+let indexList = [subjectIndex, actionIndex, descriptionIndex, objectIndex, locationIndex];
 //Callers------------------------------------------------)
 subjectBtn.addEventListener("click", subjectSelection);
 actionBtn.addEventListener("click", actionSelection);
@@ -35,18 +42,61 @@ descriptionBtn.addEventListener("click", descriptionSelection);
 objectBtn.addEventListener("click", objectSelection);
 locationBtn.addEventListener("click", locationSelection);
 
-createStory.addEventListener('click', function(){
-    storyBar.textContent = `${subjects[subjectIndex]} ${actions[actionIndex]} ${descriptions[descriptionIndex]} ${objects[objectIndex]} ${locations[locationIndex]}.`;
+// Show Story!!!!!!!!!!
+createStory.addEventListener('click', showStory);
 
-});
+//Show Random Story ##############
+randomStory.addEventListener('click', randomResult);
+
+//Reset All """"""""""""""""""""""""""
+reset.addEventListener('click', resetAll);
+
 
 
 // Functions +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+>>>>>>>>
 
+//Story created++++++++++
+function showStory() {
+    //write condition if none buttons were selected!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    storyBar.textContent = `${subjects[subjectIndex]} ${actions[actionIndex]} ${descriptions[descriptionIndex]} ${objects[objectIndex]} ${locations[locationIndex]}.`;
+}
+
+//Random Story generated------------
+function randomResult() {
+    let newStory = [];
+
+    for (let i = 0; i < lists.length; i++) {
+        let randomIndex = Math.floor(Math.random() * 4);
+
+        newStory.push(lists[i][randomIndex]);
+    }
+
+    storyBar.textContent = newStory.join(" ");
+}
+
+//Reset All ~~~~~~~~~~~~~~~~~~
+function resetAll() {
+    subjectIndex = -1;
+    actionIndex = -1;
+    descriptionIndex = -1;
+    objectIndex = -1;
+    locationIndex = -1;//reset indexs
+
+    for (let j = 0; j < indexList.length; j++) {
+        buttonsList[j].textContent = defaultBtnText[j];//reset text
+        buttonsList[j].style.backgroundColor = "#ffca3a"; //Reset color
+    }
+
+
+    storyBar.textContent = defaultStoryText;//reset storyBar
+}
+
+
+
 //Subjects=====================
 function subjectSelection() {
     subjectIndex++;
-    if(subjectIndex >= subjects.length){
+    if (subjectIndex >= subjects.length) {
         subjectIndex = 0;
     }
 
@@ -57,7 +107,7 @@ function subjectSelection() {
 //Actions=====================
 function actionSelection() {
     actionIndex++;
-    if(actionIndex >= actions.length){
+    if (actionIndex >= actions.length) {
         actionIndex = 0;
     }
 
@@ -68,7 +118,7 @@ function actionSelection() {
 //Descriptions=====================
 function descriptionSelection() {
     descriptionIndex++;
-    if(descriptionIndex >= descriptions.length){
+    if (descriptionIndex >= descriptions.length) {
         descriptionIndex = 0;
     }
 
@@ -79,7 +129,7 @@ function descriptionSelection() {
 //Objects=====================
 function objectSelection() {
     objectIndex++;
-    if(objectIndex >= objects.length){
+    if (objectIndex >= objects.length) {
         objectIndex = 0;
     }
 
@@ -90,7 +140,7 @@ function objectSelection() {
 //Place=====================
 function locationSelection() {
     locationIndex++;
-    if(locationIndex >= locations.length){
+    if (locationIndex >= locations.length) {
         locationIndex = 0;
     }
 
