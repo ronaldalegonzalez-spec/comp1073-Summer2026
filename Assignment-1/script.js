@@ -12,18 +12,88 @@ const randomStory = document.querySelector('#random-story-btn');
 const reset = document.querySelector('#reset-btn');
 
 // Another Factors====================>>>>>>
-const page = document.querySelector('body');
 const storyBar = document.querySelector('#story-output');//<-----Important<<
 
 // Arrays ********************************^
-let subjects = ["Mom", "Dad", "The Dog", "My Teacher"];
+let subjects = ["My Mom", "My Dad", "The Dog", "My Teacher"];
 let actions = ["sat on", "ate", "danced with", "kissed"];
 let descriptions = ["a funny", "a scary", "a goofy", "a slimy"];
 let objects = ["goat", "monkey", "cow", "frog"];
-let places = ["on the moon", "in my spaguetti", "in my soup", "on the grass"];
+let locations = ["on the moon", "in my spaghetti", "in my soup", "on the grass"];
+
+// Index variables>>>>
+let subjectIndex = -1;
+let actionIndex = -1;
+let descriptionIndex = -1;
+let objectIndex = -1;
+let locationIndex = -1;
+
+//Callers------------------------------------------------)
+subjectBtn.addEventListener("click", subjectSelection);
+actionBtn.addEventListener("click", actionSelection);
+descriptionBtn.addEventListener("click", descriptionSelection);
+objectBtn.addEventListener("click", objectSelection);
+locationBtn.addEventListener("click", locationSelection);
+
+createStory.addEventListener('click', function(){
+    storyBar.textContent = `${subjects[subjectIndex]} ${actions[actionIndex]} ${descriptions[descriptionIndex]} ${objects[objectIndex]} ${locations[locationIndex]}.`;
+
+});
 
 
+// Functions +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+>>>>>>>>
 
-subjectBtn.addEventListener("click", function() {
-				page.style.backgroundColor = "red";
-			});
+//Subjects=====================
+function subjectSelection() {
+    subjectIndex++;
+    if(subjectIndex >= subjects.length){
+        subjectIndex = 0;
+    }
+
+    subjectBtn.textContent = subjects[subjectIndex];
+    subjectBtn.style.backgroundColor = "purple";
+}
+
+//Actions=====================
+function actionSelection() {
+    actionIndex++;
+    if(actionIndex >= actions.length){
+        actionIndex = 0;
+    }
+
+    actionBtn.textContent = actions[actionIndex];
+    actionBtn.style.backgroundColor = "lightblue";
+}
+
+//Descriptions=====================
+function descriptionSelection() {
+    descriptionIndex++;
+    if(descriptionIndex >= descriptions.length){
+        descriptionIndex = 0;
+    }
+
+    descriptionBtn.textContent = descriptions[descriptionIndex];
+    descriptionBtn.style.backgroundColor = "green";
+}
+
+//Objects=====================
+function objectSelection() {
+    objectIndex++;
+    if(objectIndex >= objects.length){
+        objectIndex = 0;
+    }
+
+    objectBtn.textContent = objects[objectIndex];
+    objectBtn.style.backgroundColor = "orange";
+}
+
+//Place=====================
+function locationSelection() {
+    locationIndex++;
+    if(locationIndex >= locations.length){
+        locationIndex = 0;
+    }
+
+    locationBtn.textContent = locations[locationIndex];
+    locationBtn.style.backgroundColor = "violet";
+}
