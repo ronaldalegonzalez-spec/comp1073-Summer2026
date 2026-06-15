@@ -34,7 +34,6 @@ let descriptionIndex = -1;
 let objectIndex = -1;
 let locationIndex = -1;
 
-let indexList = [subjectIndex, actionIndex, descriptionIndex, objectIndex, locationIndex];
 //Callers------------------------------------------------)
 subjectBtn.addEventListener("click", subjectSelection);
 actionBtn.addEventListener("click", actionSelection);
@@ -57,7 +56,7 @@ reset.addEventListener('click', resetAll);
 
 //Story created++++++++++
 function showStory() {
-    
+
     if (subjectIndex === -1 || actionIndex === -1 || descriptionIndex === -1 || objectIndex === -1 || locationIndex === -1) {
         storyBar.textContent = "Please select all the parts of the story first!";
         return;
@@ -86,12 +85,10 @@ function resetAll() {
     objectIndex = -1;
     locationIndex = -1;//reset indexs
 
-    for (let j = 0; j < indexList.length; j++) {
+    for (let j = 0; j < 5; j++) {
         buttonsList[j].textContent = defaultBtnText[j];//reset text
         buttonsList[j].style.backgroundColor = "#ffca3a"; //Reset color
     }
-
-
     storyBar.textContent = defaultStoryText;//reset storyBar
 }
 
