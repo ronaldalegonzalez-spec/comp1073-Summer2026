@@ -53,33 +53,35 @@ class Coffee{
 }
 /* STEP 2: Instatiate a coffee based on the above constructor function */
 let ronaldCoffee = new Coffee("small", false);
-let matildaCoffee = new Coffee("medium", true);
-let meganCoffee = new Coffee("large", false);
-/* STEP 3: Add a method to the Coffee class called serveIt() */
-
-/* STEP 4: Call up the serveIt() method */
 ronaldCoffee.serveIt();
-matildaCoffee.serveIt();
-meganCoffee.serveIt();
 
-/* STEP 5: Define a subclass of the Coffee class */
-class Latte extends Coffee{
-    milkType;
-    constructor(size, isDecaf, milkType){
+// LAB-2 STARTS HERE----------->
+
+//declare the subclass Espresso
+class Espresso extends Coffee{
+    //create a new property
+    syrup;
+
+    constructor(size, isDecaf, syrup){ //constructor that accepts all properties and uses super()
         super(size, isDecaf);
-        this.milkType = milkType;
+        this.syrup = syrup;
     }
-    latteDesc(){
-        return `A ${this.size} latte with ${this.milkType} milk.`
+
+    //Method that builds and return a description of the coffee with all the properties
+    describeDrink(){
+        return `A ${this.size} ${this.isDecaf ? "decaffinated" : "caffinated"} espresso with ${this.syrup} syrup.`;
     }
 }
-/* STEP 6: Create a new instance of the Latte object */
-let jeffLatte = new Latte ("large", false, "2%");
 
-/* STEP 7: Call up the latteDesc() method for the above created Latte instance */
+//created 2 new object from the new subclass Espresso
+let mariaEspresso = new Espresso("large", false, "vanilla");
+let joseEspresso = new Espresso("medium", true, "hazelnut");
 
-/* STEP 8: Create yet another instance of Latte using the console, and try the latteDesc() method from the subclass, as well as the serveIt() method from the parent class */
+mariaEspresso.serveIt();// call the object with the "serveIt()" method
+joseEspresso.serveIt();
 
-// This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript
+let description = document.createElement("p");// Created a new Element to print the description just below the cup-figures
 
-// Special thanks to https://openclipart.org/detail/293550/coffee-to-go for the very cool coffee cup SVG
+description.textContent = mariaEspresso.describeDrink() + "  |  " + joseEspresso.describeDrink(); // concatenated the orders
+
+output.appendChild(description);//append it to the output
