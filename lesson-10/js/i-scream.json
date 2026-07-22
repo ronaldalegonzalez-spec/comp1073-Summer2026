@@ -1,30 +1,19 @@
 {
-  "companyName" : "I Scream Inc.",
-  "headOffice" : "South Pole, Antarctica",
-  "established" : 2001,
-  "active" : true,
-  "topFlavors" : [
-    {
-      "name" : "Monstrous Mint",
-      "calories" : 400,
-      "type" : "ice cream",
-      "ingredients" : [
-        "peppermint cream",
-        "dark chocolate chips",
-        "vanilla extract"
-      ],
-      "image" : "chocolate-mint.svg"
-    },
-    {
-      "name" : "Perfect Peach Mango",
-      "calories" : 350,
-      "type" : "sorbet",
-      "ingredients" : [
-        "peach purée",
-        "mango chunks",
-        "clover honey"
-      ],
-      "image" : "peach-mango.svg"
-    }
-  ]
+    "companyName": "Flabio's Company Inc.",
+    "headOffice": "North Pole",
+    "established": 2026,
+    "active": true,
+    "topFlavours": [{
+        "name": "Chocolate Mint",
+        "calories": "200",
+        "type": "ice-cream",
+        "ingredients": ["Chocolate syrup", "Peppermint Sprinkle", "Vanilla Base"],
+        "image": "https://ronaldalegonzalez-spec.github.io/comp1073-Summer2026/lesson-10/images/chocolate-mint.svg"
+    }, {
+        "name": "Peach Mango",
+        "calories": 240,
+        "type": "ice-cream",
+        "ingredients": ["Peach Syrup", "Mango Chunks", "Vanilla Base"],
+        "image":"https://ronaldalegonzalez-spec.github.io/comp1073-Summer2026/lesson-10/images/peach-mango.svg"
+        }]
 }

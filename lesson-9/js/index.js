@@ -1,9 +1,9 @@
 const output = document.querySelector('#output');
 
 /* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), then open this page in a browser and enter 'Coffee' in the console */
-function Coffee(size, isDeaf, qtyCream, qtySugar){
+function Coffee(size, isDecaf, qtyCream, qtySugar){
     this.size = size;
-    this.isDeaf = isDeaf;
+    this.isDeaf = isDecaf;
     this.qtyCream = qtyCream;
     this.qtySugar = qtySugar;
     this.decaf = this.isDecaf ? "decaffinated" : "caffinated";
@@ -26,7 +26,7 @@ output.textContent = RonaldAleCoffee.description();
 /* STEP 5c: EVERYTHING is an object in JavaScript. Try accessing the prototype property of Coffee (which even though it is a constructor function it is still an object) with Coffee.prototype in the console. Then try Object.Prototype */
 
 /* STEP 6a: Let's circle back to create() - use scottsCoffee to create a new object instance - one based on scottsCoffee. */
-let robertCoffee = Object.Create(RonaldAleCoffee);
+let robertCoffee = Object.create(RonaldAleCoffee);
 robertCoffee.size= "large";
 robertCoffee.isDecaf = true;
 robertCoffee.qtyCream = 1;
@@ -36,7 +36,7 @@ robertCoffee.qtySugar = 1;
 /* STEP 7a: Each constructor function includes a prototype property with a value equal to an object that contains a constructor property. Try it out by typing scottsCoffee.constructor and richsCoffee.constructor */
 
 /* STEP 7b: Since constructor is also a function, you can use it to create a new object instance - try it! */
-let meganCoffe = new robertCoffee.contructor("small", false, 2, 3);
+let meganCoffe = new robertCoffee.constructor("small", false, 2, 3);
 /* STEP 7c: Attempt via the console to access the new object's properties - kathysCoffee.size, kathysCoffee.isDecaf, etc. */
 
 /* STEP 7d: Now see if the new object can access the description() method… */
