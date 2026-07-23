@@ -15,5 +15,11 @@
         "type": "ice-cream",
         "ingredients": ["Peach Syrup", "Mango Chunks", "Vanilla Base"],
         "image":"https://ronaldalegonzalez-spec.github.io/comp1073-Summer2026/lesson-10/images/peach-mango.svg"
+    }, {
+        "name": "Strawberry Sprinkle",
+        "calories": 220,
+        "type": "ice-cream",
+        "ingredients": ["Strawberry Syrup", "Strawberry Chunks", "Sprinkle", "Chocolate Base"],
+        "image":"https://ronaldalegonzalez-spec.github.io/comp1073-Summer2026/lesson-10/images/strawberry-sprinkle.svg"
         }]
 }

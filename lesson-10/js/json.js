@@ -19,7 +19,7 @@ async function populate(){
     // STEP 9a: Invoke the populateHeader function here, then build it below
     populateHeader(responseJson);
     // STEP 10a: Invoke the showTopFlavors function here, then build it below
-    showTopFlavours(responseJson);
+    showTopFlavors(responseJson);
 
 }
 // STEP 3b: Call the populate() function
@@ -36,28 +36,49 @@ function populateHeader(json) {
     para.textContent = `Head Office: ${json.headOffice}, est. ${json.established}, Status: ${json.active ? "Active" : "Inactive"}`;
     // Inject the complete H1 element into the DOM, inside the HEADER
     header.appendChild(h1);
-    section.appendChild(para);
+    header.appendChild(para);
 };
 /* STEP 10b: Assemble the showTopFlavors() function */
 function showTopFlavors(json) {
     // STEP 10c: Attache the JSON topFlavors object to a variable
-    //let topFlavors = jsonObj.topFlavors;
+    let topFlavors = json.topFlavours;
+
     // STEP 10d: Loop through the topFlavors object
-    for (let i = 0; i < topFlavors.length; i ++) {
+    for (let i = 0; i < topFlavors.length; i++) { 
+        console.log(topFlavors[i]);
+
         // STEP 10e: build HTML elements for the content
-        
+       let article = document.createElement("article");//<article></article>
+       let h2 = document.createElement("h2");//<h2></h2>
+       let img = document.createElement("img");//<img></img>
+       let p1 = document.createElement("p");//<p></p>
+       let p2 = document.createElement("p");//<p></p>
+       let list = document.createElement("ul");//<p></p>
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-        
+        h2.textContent = topFlavors[i].name;
+        p1.textContent = "Calories: " + topFlavors[i].calories;
+        p2.textContent = "Type: " + topFlavors[i].type;
+        img.setAttribute("src", topFlavors[i].image);
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
-        
+        let ingredients = topFlavors[i].ingredients;
+        for (j = 0; j < ingredients.length; j++){
             // add the ingredient to the UL
-
+            let listItem = document.createElement("li");//<li></li>
+            listItem.textContent = ingredients[j];
+            list.appendChild(listItem);
+        }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
         
         // STEP 10i: Append each complete ARTICLE element to the SECTION element
-        
+        article.appendChild(h2);
+        article.appendChild(p1);
+        article.appendChild(p2);
+        article.appendChild(list);
+        article.appendChild(img);
+
+        section.appendChild(article);
     };
 };
 // STEP 11: The instructor will edit the JSON file - refresh your page to see the updated content
