@@ -98,3 +98,14 @@ button:hover {
     font-weight: bold;
     white-space: pre-line;
 }
+
+#pizzaImg{
+    width: 100px;
+    height: 100px;
+    position: flex;
+    margin-left: 325px;
+}
+
+footer{
+    padding: 23px;;
+}
