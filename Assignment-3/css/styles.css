@@ -83,13 +83,6 @@ button {
     background-color: #555;
 }
 
-/* Status message
--------------------------------------------------- */
-#status {
-    margin-bottom: 0;
-    font-weight: bold;
-}
-
 /* Pokemon results
 -------------------------------------------------- */
 #results {
@@ -115,65 +108,31 @@ button {
     text-transform: capitalize;
 }
 
+.pokemon-card p#headerParagraph {
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pokemon-card p {
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.pokemon-card p:not(#headerParagraph)::before {
+    content: "•";
+}
+
 /* Pokemon image
 -------------------------------------------------- */
 .pokemon-card img {
     width: 220px;
     height: 220px;
     object-fit: contain;
-}
-
-/* Pokemon information
--------------------------------------------------- */
-.pokemon-info {
-    text-align: left;
-    margin-top: 20px;
-}
-
-.pokemon-info p {
-    margin: 8px 0;
-}
-
-.pokemon-type {
-    text-transform: capitalize;
-    font-weight: bold;
-}
-
-/* Statistics
--------------------------------------------------- */
-.stats {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.stats h3 {
-    text-align: center;
-}
-
-.stat {
-    margin-bottom: 10px;
-}
-
-.stat-name {
-    display: inline-block;
-    width: 100px;
-    text-transform: capitalize;
-}
-
-.stat-bar {
-    display: inline-block;
-    width: 60%;
-    height: 15px;
-    background-color: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    vertical-align: middle;
-}
-
-.stat-value {
-    display: block;
-    height: 100%;
-    background-color: #555;
 }
 
 /* Documentation
@@ -215,7 +174,8 @@ button {
         flex-direction: column;
     }
 
-    input, button {
+    input,
+    button {
         width: 100%;
     }
 
