@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pokemon Explorer | COMP1073 Client-Side JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="js/js.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Pokemon Explorer</h1>
+
+        <!-- Student information will be added dynamically with JavaScript -->
+        <p id="student"></p>
+    </header>
+
+    <main>
+        <section class="controls">
+            <h2>Search for a Pokemon</h2>
+            <form>
+                <label for="pokemon-name">Enter a Pokemon name:</label>
+
+                <input type="text" id="pokemon-name" placeholder="Example: pikachu" required />
+
+                <button type="submit">Search Pokemon</button>
+            </form>
+            <p id="status"></p>
+
+        </section>
+
+        <!-- Pokemon information will be displayed here using JavaScript -->
+        <section id="results"></section>
+        <section class="documentation">
+
+            <h2>API Documentation</h2>
+
+            <p>
+                This page uses the PokeAPI to retrieve Pokemon information.
+            </p>
+
+            <a href="https://pokeapi.co/docs/v2" target="_blank" rel="noopener">View PokeAPI Documentation</a>
+        </section>
+
+    </main>
+</body>
+
+</html>
